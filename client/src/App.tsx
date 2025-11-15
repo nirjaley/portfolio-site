@@ -7,7 +7,7 @@ import Contact from "./sections/Contact/Contact";
 
 function App() {
   return (
-    <div className="text-white">
+    <div id="root" className="min-h-screen w-full bg-gray-900 text-white">
       <Hero />
       <About />
       <Skills />
