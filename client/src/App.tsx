@@ -9,6 +9,7 @@ import Contact from "./sections/Contact/Contact";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +23,15 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
 
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <div id="root" className="min-h-screen w-full bg-gray-900 text-white">
-      <Navbar />
+    <div className={`min-h-screen w-full ${theme === 'light' ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'} transition-colors duration-300`}>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <div className="pt-24 px-4">
-        <Hero />
+        <Hero theme={theme} />
         <About />
         <Skills />
         <Projects />
