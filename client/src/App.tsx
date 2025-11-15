@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from "./components/Navbar";
+import ScrollSection from "./components/ScrollSection";
 import Hero from "./sections/Hero/Hero";
 import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
@@ -28,16 +30,35 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen w-full ${theme === 'light' ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'} transition-colors duration-300`}>
+    <div className={`w-full ${theme === 'light' ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'} transition-colors duration-300`}>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <div className="pt-24 px-4">
-        <Hero theme={theme} />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </div>
+      <AnimatePresence>
+        <div className="snap-y snap-mandatory h-screen overflow-y-auto">
+          <ScrollSection id="home">
+            <Hero theme={theme} />
+          </ScrollSection>
+          
+          <ScrollSection id="about">
+            <About />
+          </ScrollSection>
+          
+          <ScrollSection id="skills">
+            <Skills />
+          </ScrollSection>
+          
+          <ScrollSection id="experience">
+            <Experience />
+          </ScrollSection>
+          
+          <ScrollSection id="projects">
+            <Projects />
+          </ScrollSection>
+          
+          <ScrollSection id="contact">
+            <Contact />
+          </ScrollSection>
+        </div>
+      </AnimatePresence>
     </div>
   );
 }
