@@ -44,7 +44,7 @@ const Contact = () => {
             onChange={handleChange}
           />
 
-          <button className="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
+          <button className="px-5 py-3 rounded-lg transition-colors dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 bg-gray-900 text-white hover:bg-gray-700">
             Send Message
           </button>
         </form>

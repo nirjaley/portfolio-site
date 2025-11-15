@@ -10,11 +10,13 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/path-to-your-resume.pdf';
+    const resumeUrl = '/Nirjal Byanjankar.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'resume.pdf';
+    link.download = 'Nirjal_Byanjankar_Resume.pdf';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   return (

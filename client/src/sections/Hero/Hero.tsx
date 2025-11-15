@@ -18,7 +18,11 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
         }`}>
           UI/UX Designer & Frontend Developer
         </p>
-        <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+        <button className={`mt-6 px-6 py-3 rounded-lg transition-colors ${
+          theme === 'light' 
+            ? 'bg-gray-900 text-white hover:bg-gray-700' 
+            : 'bg-white text-gray-900 hover:bg-gray-100'
+        }`}>
           View My Work
         </button>
       </div>

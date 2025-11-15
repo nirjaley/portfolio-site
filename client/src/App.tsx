@@ -9,7 +9,7 @@ import Contact from "./sections/Contact/Contact";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     const handleScroll = () => {

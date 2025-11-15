@@ -23,7 +23,7 @@ const Projects = () => {
             >
               <h2 className="text-xl font-bold">{p.title}</h2>
               <p className="text-gray-700 dark:text-gray-300 mt-2">{p.desc}</p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">
+              <button className="mt-4 px-4 py-2 rounded-lg transition-colors dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 bg-gray-900 text-white hover:bg-gray-700">
                 View More
               </button>
             </div>
