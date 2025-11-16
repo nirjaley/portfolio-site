@@ -26,7 +26,7 @@ const About: React.FC<AboutProps> = ({ theme }) => {
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 ${
             theme === 'light' 
               ? 'bg-blue-100 text-blue-600' 
-              : 'bg-blue-900/30 text-green-400'
+              : 'bg-blue-900/30 text-blue-400'
           }`}>
             Get to know me
           </span>

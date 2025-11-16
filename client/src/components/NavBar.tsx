@@ -29,6 +29,12 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         <div className="flex items-center gap-4">
           {/* Left side - Profile Image */}
           <button 
+            onClick={() => {
+              const heroSection = document.getElementById('home');
+              if (heroSection) {
+                heroSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className={`w-10 h-10 rounded-full overflow-hidden border-2 transition-all duration-300 flex-shrink-0 bg-gray-700 p-0 hover:scale-110 hover:rotate-12 active:scale-95 ${
               theme === 'light' ? 'border-gray-800 hover:border-gray-600' : 'border-white hover:border-gray-300'
             }`}
@@ -52,6 +58,14 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             {['About', 'Education', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
               <a 
                 key={item} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const sectionId = item.toLowerCase();
+                  const section = document.getElementById(sectionId);
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 href={`#${item.toLowerCase()}`}
                 className={`text-sm font-medium transition-all duration-300 whitespace-nowrap relative group ${
                   theme === 'light' ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'
@@ -60,6 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{
                   transform: hoveredItem === item ? 'translateY(-2px) scale(1.1)' : 'translateY(0) scale(1)',
+                  cursor: 'pointer'
                 }}
               >
                 {item}
