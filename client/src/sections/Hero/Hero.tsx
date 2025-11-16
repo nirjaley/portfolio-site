@@ -68,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               <span className={`text-sm font-medium ${
                 theme === 'light' ? 'text-gray-700' : 'text-gray-300'
               }`}>
-                Available for new projects
+                Working on something 
               </span>
             </div>
 
@@ -200,7 +200,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               <div className={`absolute -top-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm border animate-float ${
                 theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-800/80 border-gray-700'
               }`}>
-                <span className="text-3xl">💼</span>
+                <span className="text-3xl">🎵</span>
               </div>
               <div className={`absolute -bottom-4 -left-4 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm border animate-float-delay ${
                 theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-800/80 border-gray-700'
