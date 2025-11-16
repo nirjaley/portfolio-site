@@ -7,7 +7,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ theme }) => {
   const skills = [
-    "React", "TypeScript", "NodeJS", "TailwindCSS", "MongoDB", "Figma"
+    "React", "TypeScript", "NodeJS", "TailwindCSS", "PostgreSQL", "Figma"
   ];
 
   const interests = [

@@ -138,7 +138,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
             {/* Social Links */}
             <div className="flex gap-6 justify-center lg:justify-start mt-12 animate-fade-in-up-delay">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/nirjaley"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${
@@ -150,7 +150,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/nirjal-byan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${
@@ -162,7 +162,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-  href="https://instagram.com/yourusername"
+  href="https://instagram.com/nirjal.13"
   target="_blank"
   rel="noopener noreferrer"
   className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${
