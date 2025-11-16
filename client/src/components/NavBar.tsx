@@ -23,8 +23,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center animate-slideDown">
       <div className={`rounded-full px-4 py-2 shadow-2xl backdrop-blur-sm hover:shadow-3xl transition-all duration-300 hover:scale-105 ${
         theme === 'light' 
-          ? 'bg-white border border-gray-200' 
-          : 'bg-black border border-gray-800'
+          ? 'bg-white/90 border border-gray-300/90' 
+          : 'bg-black/30 border border-gray-500/60'
       }`}>
         <div className="flex items-center gap-4">
           {/* Left side - Profile Image */}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import ScrollSection from "./components/ScrollSection";
 import Hero from "./sections/Hero/Hero";
 import About from "./sections/About/About";
@@ -11,7 +11,7 @@ import Contact from "./sections/Contact/Contact";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +39,7 @@ function App() {
           </ScrollSection>
           
           <ScrollSection id="about">
-            <About />
+            <About theme={theme} />
           </ScrollSection>
           
           <ScrollSection id="skills">
