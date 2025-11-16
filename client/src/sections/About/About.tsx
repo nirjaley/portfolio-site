@@ -11,7 +11,7 @@ const About: React.FC<AboutProps> = ({ theme }) => {
   ];
 
   const interests = [
-    { icon: Music, label: "Music Lover", description: "Always coding with good vibes" },
+    { icon: Music, label: "Music Listener", description: "Always working with good vibes" },
     { icon: Plane, label: "Travel Enthusiast", description: "Exploring new places & cultures" },
     { icon: Gamepad2, label: "Gamer", description: "Strategizing in virtual worlds" },
   ];

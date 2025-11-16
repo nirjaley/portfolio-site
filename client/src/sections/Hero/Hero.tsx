@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 interface HeroProps {
   theme: 'light' | 'dark';
@@ -162,17 +162,18 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${
-                  theme === 'light'
-                    ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
-                    : 'border-gray-700 text-gray-300 hover:bg-gray-800'
-                }`}
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+  href="https://instagram.com/yourusername"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${
+    theme === 'light'
+      ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
+      : 'border-gray-700 text-gray-300 hover:bg-gray-800'
+  }`}
+>
+  <Instagram className="w-5 h-5" />
+</a>
+
             </div>
           </div>
 
