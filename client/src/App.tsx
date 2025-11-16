@@ -8,6 +8,7 @@ import Skills from "./sections/Skills/Skills";
 import Experience from "./sections/Experience/Experience";
 import Projects from "./sections/Projects/Projects";
 import Contact from "./sections/Contact/Contact";
+import Education from "./sections/Education/Education";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,6 +41,10 @@ function App() {
           
           <ScrollSection id="about">
             <About theme={theme} />
+          </ScrollSection>
+          
+          <ScrollSection id="education">
+            <Education theme={theme} />
           </ScrollSection>
           
           <ScrollSection id="skills">

@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           
           {/* Middle - Navigation Links */}
           <div className="hidden md:flex items-center gap-6">
-            {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+            {['About', 'Education', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
