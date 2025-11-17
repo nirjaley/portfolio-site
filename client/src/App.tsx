@@ -48,7 +48,7 @@ function App() {
           </ScrollSection>
           
           <ScrollSection id="skills">
-            <Skills />
+            <Skills theme={theme} />
           </ScrollSection>
           
           <ScrollSection id="experience">
