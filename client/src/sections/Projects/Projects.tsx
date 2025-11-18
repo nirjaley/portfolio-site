@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Globe, Smartphone, Code2, Database, Layers } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Code2, Database, HandHeart, Dribbble, Landmark } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -17,19 +17,19 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
   const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
-      desc: "Full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      icon: Globe,
+      title: "Basketboard",
+      desc: "Full-stack basketball coaching web application with payment integration, real-time chat, and live notifications.",
+      tags: ["React", "Node.js", "Express", "Socket.io", "PostgreSQL", "Khalti API"],
+      icon: Dribbble,
       github: "#",
       demo: "#"
     },
     {
-      title: "Task Manager App",
-      desc: "Collaborative task management application with real-time updates, team workspaces, and progress tracking.",
-      tags: ["React", "Express", "Socket.io", "PostgreSQL"],
-      icon: Layers,
-      github: "#",
+      title: "Khusimwelfare",
+      desc: "Website design for a welfare organization, created with Figma to showcase modern UI/UX principles and responsive design.",
+      tags: ["Figma", "UI/UX Design", "Web Design", "Prototyping"],
+      icon: HandHeart,
+      github: undefined,
       demo: "#"
     },
     {
@@ -41,11 +41,11 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
       demo: "#"
     },
     {
-      title: "Weather Dashboard",
-      desc: "Real-time weather tracking app with location-based forecasts, interactive maps, and weather alerts.",
-      tags: ["TypeScript", "React", "API", "Mapbox"],
-      icon: Globe,
-      github: "#",
+      title: "Bondbrokerage Website",
+      desc: "Modern website design for a bond brokerage company, created with Figma to showcase financial services and investment opportunities.",
+      tags: ["Figma", "UI/UX Design", "Finance", "Web Design"],
+      icon: Landmark,
+      github: undefined,
       demo: "#"
     },
     {
