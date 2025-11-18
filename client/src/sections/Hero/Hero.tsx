@@ -68,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               <span className={`text-sm font-medium ${
                 theme === 'light' ? 'text-gray-700' : 'text-gray-300'
               }`}>
-                Working on something 
+                Open to work
               </span>
             </div>
 

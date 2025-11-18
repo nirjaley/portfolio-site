@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import Navbar from "./components/NavBar";
 import ScrollSection from "./components/ScrollSection";
 import Hero from "./sections/Hero/Hero";
@@ -33,37 +32,36 @@ function App() {
   return (
     <div className={`w-full ${theme === 'light' ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'} transition-colors duration-300`}>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <AnimatePresence>
-        <div className="snap-y snap-mandatory h-screen overflow-y-auto">
-          <ScrollSection id="home">
-            <Hero theme={theme} />
-          </ScrollSection>
-          
-          <ScrollSection id="about">
-            <About theme={theme} />
-          </ScrollSection>
-          
-          <ScrollSection id="education">
-            <Education theme={theme} />
-          </ScrollSection>
-          
-          <ScrollSection id="skills">
-            <Skills theme={theme} />
-          </ScrollSection>
-          
-          <ScrollSection id="experience">
-            <Experience theme={theme} />
-          </ScrollSection>
-          
-          <ScrollSection id="projects">
-            <Projects />
-          </ScrollSection>
-          
-          <ScrollSection id="contact">
-            <Contact />
-          </ScrollSection>
-        </div>
-      </AnimatePresence>
+      
+      <div className="w-full">
+        <ScrollSection id="home" theme={theme}>
+          <Hero theme={theme} />
+        </ScrollSection>
+        
+        <ScrollSection id="about" theme={theme}>
+          <About theme={theme} />
+        </ScrollSection>
+        
+        <ScrollSection id="education" theme={theme}>
+          <Education theme={theme} />
+        </ScrollSection>
+        
+        <ScrollSection id="skills" theme={theme}>
+          <Skills theme={theme} />
+        </ScrollSection>
+        
+        <ScrollSection id="experience" theme={theme}>
+          <Experience theme={theme} />
+        </ScrollSection>
+        
+        <ScrollSection id="projects" theme={theme}>
+          <Projects theme={theme} />
+        </ScrollSection>
+        
+        <ScrollSection id="contact" theme={theme}>
+          <Contact theme={theme} />
+        </ScrollSection>
+      </div>
     </div>
   );
 }
