@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "./components/NavBar";
 import ScrollSection from "./components/ScrollSection";
+import ScrollToTop from "./components/ScrollToTop";
 import Hero from "./sections/Hero/Hero";
 import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
@@ -74,6 +75,7 @@ function App() {
         </div>
         
         <Footer theme={theme} />
+        <ScrollToTop />
       </motion.div>
     </AnimatePresence>
   );
