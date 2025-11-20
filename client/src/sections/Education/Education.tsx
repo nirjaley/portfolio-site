@@ -57,7 +57,7 @@ const Education: React.FC<EducationProps> = ({ theme }) => {
               ? 'bg-blue-100 text-blue-600' 
               : 'bg-blue-900/30 text-blue-400'
           }`}>
-            My Journey
+            Education timeline
           </span>
           <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${
             theme === 'light' ? 'text-gray-900' : 'text-white'

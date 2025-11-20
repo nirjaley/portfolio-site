@@ -14,11 +14,10 @@ const ScrollSection = ({ children, id, className = '', theme = 'light' }: Scroll
   
   // Smooth scroll behavior for the entire page
   useEffect(() => {
-    // This enables smooth scrolling for the whole document
+    // Enables smooth scrolling for the whole document
     document.documentElement.style.scrollBehavior = 'smooth';
     
     return () => {
-      // Revert to default scroll behavior when component unmounts
       document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
