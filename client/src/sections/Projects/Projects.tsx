@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Smartphone, Code2, Database, HandHeart, Dribbble, Landmark } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Code2, HandHeart, Dribbble, Landmark, BookOpen } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -41,7 +41,7 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
       demo: "#"
     },
     {
-      title: "Bondbrokerage Website",
+      title: "BondBrokerage",
       desc: "Modern website design for a bond brokerage company, created with Figma to showcase financial services and investment opportunities.",
       tags: ["Figma", "UI/UX Design", "Finance", "Web Design"],
       icon: Landmark,
@@ -49,10 +49,10 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
       demo: "#"
     },
     {
-      title: "Social Media Analytics",
-      desc: "Analytics dashboard for tracking social media metrics, engagement rates, and audience insights.",
-      tags: ["Next.js", "Python", "Chart.js", "Redis"],
-      icon: Database,
+      title: "Lord of the Reads",
+      desc: "A collaborative e-commerce library platform for book lovers, featuring a full-stack solution with user accounts, book listings, and a seamless reading experience.",
+      tags: ["React", "Vite", "JavaScript", "C#", "PostgreSQL", "Tailwind"],
+      icon: BookOpen,
       github: "#",
       demo: "#"
     },

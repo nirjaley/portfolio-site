@@ -11,7 +11,7 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
       title: "Programming Languages",
       icon: Code2,
       color: "blue",
-      skills: ["Java", "JavaScript", "Python", "C#"]
+      skills: ["JavaScript", "Java", "Python", "C#"]
     },
     {
       title: "Web Technologies",
@@ -23,13 +23,13 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
       title: "Database",
       icon: Database,
       color: "green",
-      skills: ["MySQL", "MongoDB", "PostgreSQL"]
+      skills: ["MySQL", "PostgreSQL"]
     },
     {
       title: "Frameworks & Tools",
       icon: Wrench,
       color: "orange",
-      skills: ["Git", "GitHub", "Figma", "VS Code", "Eclipse IDE", "Canva", "Balsamiq"]
+      skills: ["Git", "GitHub", "Figma", "VS Code", "Canva"]
     }
   ];
 
