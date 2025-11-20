@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Smartphone, Code2, HandHeart, Dribbble, Landmark, BookOpen } from 'lucide-react';
+import { ExternalLink, Github, Code2, HandHeart, Dribbble, Landmark, BookOpen, Calendar } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -21,8 +21,8 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
       desc: "Full-stack basketball coaching web application with payment integration, real-time chat, and live notifications.",
       tags: ["React", "Node.js", "Express", "Socket.io", "PostgreSQL", "Khalti API"],
       icon: Dribbble,
-      github: "#",
-      demo: "#"
+      github: "https://github.com/nirjaley/basketboard",
+      demo: "https://basketboard-five.vercel.app/"
     },
     {
       title: "Khusimwelfare",
@@ -30,14 +30,14 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
       tags: ["Figma", "UI/UX Design", "Web Design", "Prototyping"],
       icon: HandHeart,
       github: undefined,
-      demo: "#"
+      demo: "https://www.figma.com/design/ecjsXATM4G01psLtXIB3Dw/KhusimWelfare?node-id=0-1&p=f&t=LCIldZSG0VLKKMhL-0"
     },
     {
       title: "Portfolio Website",
       desc: "Modern, responsive portfolio with smooth animations, dark mode, and optimized performance.",
       tags: ["React", "Vite", "Tailwind", "Framer Motion"],
       icon: Code2,
-      github: "#",
+      github: "https://github.com/nirjaley/portfolio-site",
       demo: "#"
     },
     {
@@ -46,23 +46,22 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
       tags: ["Figma", "UI/UX Design", "Finance", "Web Design"],
       icon: Landmark,
       github: undefined,
-      demo: "#"
+      demo: "https://www.figma.com/design/mNjRnpFh84l4ZBlGLYPRFu/BondBrokerage"
     },
     {
       title: "Lord of the Reads",
       desc: "A collaborative e-commerce library platform for book lovers, featuring a full-stack solution with user accounts, book listings, and a seamless reading experience.",
       tags: ["React", "Vite", "JavaScript", "C#", "PostgreSQL", "Tailwind"],
       icon: BookOpen,
-      github: "#",
-      demo: "#"
+      github: "https://github.com/Prajesh-Shrestha-Github/LordofTheReads",
     },
     {
-      title: "Fitness Tracker Mobile",
-      desc: "Cross-platform mobile app for tracking workouts, nutrition, and progress with personalized recommendations.",
-      tags: ["React Native", "Firebase", "Redux"],
-      icon: Smartphone,
-      github: "#",
-      demo: "#"
+      title: "Eventoraa",
+      desc: "A basic event management application with CRUD functionality, built with React, JavaScript, and Vite for a seamless user experience.",
+      tags: ["React", "JavaScript", "Vite", "CRUD"],
+      icon: Calendar,
+      github: "https://github.com/nirjaley/EventManagementApp",
+      demo: "https://eventoraa.netlify.app/"
     }
   ];
 
@@ -181,20 +180,6 @@ const Projects: React.FC<ProjectsProps> = ({ theme = 'light' }) => {
               </div>
             );
           })}
-        </div>
-
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <button
-            className={`px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 ${
-              theme === 'light'
-                ? 'bg-gray-900 text-white hover:bg-gray-800'
-                : 'bg-white text-gray-900 hover:bg-gray-100'
-            }`}
-            aria-label="View all projects"
-          >
-            View All Projects
-          </button>
         </div>
       </div>
     </section>

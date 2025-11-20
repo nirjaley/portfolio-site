@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
+// Smooth scroll to a section by ID
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 interface HeroProps {
   theme: 'light' | 'dark';
 }
@@ -105,11 +113,15 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-fade-in-up">
-              <button className={`group relative px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden ${
-                theme === 'light' 
-                  ? 'bg-gray-900 text-white hover:bg-gray-800' 
-                  : 'bg-white text-gray-900 hover:bg-gray-100'
-              }`}>
+              <button 
+                onClick={() => scrollToSection('projects')}
+                className={`group relative px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden ${
+                  theme === 'light' 
+                    ? 'bg-gray-900 text-white hover:bg-gray-800' 
+                    : 'bg-white text-gray-900 hover:bg-gray-100'
+                }`}
+                aria-label="View my work"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   View My Work
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,11 +135,15 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 }`}></div>
               </button>
 
-              <button className={`px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 border backdrop-blur-sm ${
-                theme === 'light' 
-                  ? 'border-gray-300 text-gray-900 hover:bg-gray-100' 
-                  : 'border-gray-600 text-white hover:bg-gray-800'
-              }`}>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className={`px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 border backdrop-blur-sm ${
+                  theme === 'light' 
+                    ? 'border-gray-300 text-gray-900 hover:bg-gray-100' 
+                    : 'border-gray-600 text-white hover:bg-gray-800'
+                }`}
+                aria-label="Get in touch"
+              >
                 <span className="flex items-center gap-2">
                   Get in Touch
                   <Mail className="w-5 h-5" />
