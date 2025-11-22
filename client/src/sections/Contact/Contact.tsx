@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { useState, useRef } from "react";
+import { Mail, MapPin, Phone, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   theme: 'light' | 'dark';
@@ -7,14 +8,63 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ theme = 'light' }) => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+    
+    // Basic validation
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setSubmitStatus({
+        success: false,
+        message: 'Please fill in all fields.'
+      });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      setSubmitStatus({
+        success: false,
+        message: 'Please enter a valid email address.'
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      
+      // Replace these with your EmailJS credentials
+      const serviceId = 'service_0y77imf';
+      const templateId = 'template_dr8thpf';
+      const publicKey = 'T6Mk0DnbvhnTpmahv';
+      
+      if (!formRef.current) throw new Error('Form reference not found');
+      
+      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+      
+      setSubmitStatus({
+        success: true,
+        message: 'Message sent successfully! I\'ll get back to you soon.'
+      });
+      
+      // Reset form
+      setForm({ name: "", email: "", message: "" });
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus({
+        success: false,
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -131,7 +181,7 @@ const Contact: React.FC<ContactProps> = ({ theme = 'light' }) => {
               Send me a message
             </h3>
             
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-1">
                 <label htmlFor="name" className={`block text-sm font-medium ${
                   theme === 'light' ? 'text-gray-700' : 'text-gray-300'
@@ -198,17 +248,41 @@ const Contact: React.FC<ContactProps> = ({ theme = 'light' }) => {
                 />
               </div>
 
-              <button 
+              <button
                 type="submit"
-                className={`w-full py-4 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 ${
+                disabled={isSubmitting}
+                className={`w-full py-4 px-6 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
                   theme === 'light'
-                    ? 'bg-gray-900 text-white hover:bg-gray-800'
-                    : 'bg-white text-gray-900 hover:bg-gray-100'
-                }`}
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                    : 'bg-blue-600 hover:bg-blue-700 text-white'
+                } ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}
               >
-                Send Message
-                <span className="ml-2">→</span>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
+              
+              {submitStatus && (
+                <div 
+                  className={`p-4 rounded-lg flex items-start gap-3 ${
+                    submitStatus.success 
+                      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' 
+                      : 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+                  }`}
+                >
+                  {submitStatus.success ? (
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  ) : (
+                    <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  )}
+                  <span>{submitStatus.message}</span>
+                </div>
+              )}
             </form>
           </div>
         </div>
