@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Mail, MapPin, Phone, Loader2, CheckCircle, XCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ContactProps {
   theme: 'light' | 'dark';
@@ -50,7 +51,7 @@ const Contact: React.FC<ContactProps> = ({ theme = 'light' }) => {
       
       setSubmitStatus({
         success: true,
-        message: 'Message sent successfully! I\'ll get back to you soon.'
+        message: `Hi ${form.name.trim().split(' ')[0]}, I will get back to you soon.`
       });
       
       // Reset form
@@ -267,22 +268,48 @@ const Contact: React.FC<ContactProps> = ({ theme = 'light' }) => {
                 )}
               </button>
               
-              {submitStatus && (
-                <div 
-                  className={`p-4 rounded-lg flex items-start gap-3 ${
-                    submitStatus.success 
-                      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' 
-                      : 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
-                  }`}
-                >
-                  {submitStatus.success ? (
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  ) : (
-                    <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  )}
-                  <span>{submitStatus.message}</span>
-                </div>
-              )}
+              <AnimatePresence>
+                {submitStatus && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ 
+                      type: 'spring',
+                      stiffness: 500,
+                      damping: 30
+                    }}
+                    className={`p-4 rounded-lg flex items-start gap-3 ${
+                      submitStatus.success 
+                        ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' 
+                        : 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+                    }`}
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ 
+                        type: 'spring',
+                        stiffness: 500,
+                        delay: 0.15
+                      }}
+                    >
+                      {submitStatus.success ? (
+                        <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      ) : (
+                        <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      )}
+                    </motion.div>
+                    <motion.span
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      {submitStatus.message}
+                    </motion.span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
           </div>
         </div>
