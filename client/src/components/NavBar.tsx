@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import profileImage from '/portfolio-site/assets/images/profile.jpg';
 
 interface NavbarProps {
   theme: 'light' | 'dark';
@@ -10,7 +9,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/portfolio-site/Nirjal Byanjankar.pdf';
+    const resumeUrl = '/Nirjal Byanjankar.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
     link.download = 'Nirjal_Byanjankar_Resume.pdf';
@@ -42,12 +41,12 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             style={{ minWidth: '40px', minHeight: '40px' }}
           >
             <img 
-              src={profileImage}
+              src="/assets/images/profile.jpg"
               alt="Profile" 
               className="w-full h-full object-cover block transition-transform duration-300 hover:scale-110"
               style={{ width: '40px', height: '40px' }}
               onError={(e) => {
-                console.error('Image failed to load:', profileImage);
+                console.error('Image failed to load');
                 e.currentTarget.style.display = 'none';
               }}
             />
