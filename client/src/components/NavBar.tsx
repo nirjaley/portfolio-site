@@ -9,7 +9,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/Nirjal Byanjankar.pdf';
+    const resumeUrl = import.meta.env.BASE_URL + 'Nirjal Byanjankar.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
     link.download = 'Nirjal_Byanjankar_Resume.pdf';
@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             style={{ minWidth: '40px', minHeight: '40px' }}
           >
             <img 
-              src="/assets/images/profile.jpg"
+              src={import.meta.env.BASE_URL + 'assets/images/profile.jpg'}
               alt="Profile" 
               className="w-full h-full object-cover block transition-transform duration-300 hover:scale-110"
               style={{ width: '40px', height: '40px' }}
