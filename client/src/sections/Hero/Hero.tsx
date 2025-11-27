@@ -202,7 +202,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               {/* Image Container */}
               <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-900">
                 <img 
-                  src="/assets/images/profile.jpg" 
+                  src="/portfolio-site/assets/images/profile.jpg" 
                   alt="Nirjal" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {

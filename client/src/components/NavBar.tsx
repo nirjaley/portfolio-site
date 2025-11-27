@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profileImage from '/assets/images/profile.jpg';
+import profileImage from '/portfolio-site/assets/images/profile.jpg';
 
 interface NavbarProps {
   theme: 'light' | 'dark';
@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/Nirjal Byanjankar.pdf';
+    const resumeUrl = '/portfolio-site/Nirjal Byanjankar.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
     link.download = 'Nirjal_Byanjankar_Resume.pdf';
