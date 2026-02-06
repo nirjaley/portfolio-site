@@ -8,6 +8,19 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ theme }) => {
   const experiences = [
     {
+      role: "Full stack developer",
+      company: "AR Forge Tech",
+      location: "Kathmandu, Nepal",
+      period: "December 2025 - Present",
+      type: "Internship",
+      highlights: [
+        "Developing scalable backend services using NestJS and PostgreSQL",
+        "Building responsive and interactive UIs with Next.js and Material UI",
+        "Collaborating on full-stack web application development"
+      ],
+      color: "green"
+    },
+    {
       role: "UI/UX Design Intern",
       company: "SOFTECH Foundation PVT. LTD.",
       location: "Kathmandu, Nepal",
@@ -37,6 +50,14 @@ const Experience: React.FC<ExperienceProps> = ({ theme }) => {
 
   const getColorClasses = (color: string) => {
     const colors: Record<string, any> = {
+      green: {
+        badgeLight: 'bg-green-100 text-green-700 border-green-200',
+        badgeDark: 'bg-green-900/30 text-green-400 border-green-800/30',
+        iconLight: 'bg-green-100 text-green-600',
+        iconDark: 'bg-green-900/30 text-green-400',
+        accentLight: 'bg-green-500',
+        accentDark: 'bg-green-400'
+      },
       blue: {
         badgeLight: 'bg-blue-100 text-blue-700 border-blue-200',
         badgeDark: 'bg-blue-900/30 text-blue-400 border-blue-800/30',
@@ -58,35 +79,30 @@ const Experience: React.FC<ExperienceProps> = ({ theme }) => {
   };
 
   return (
-    <section id="experience" className={`py-24 transition-colors duration-300 ${
-      theme === 'light' ? 'bg-white' : 'bg-gray-900'
-    }`}>
+    <section id="experience" className={`py-24 transition-colors duration-300 ${theme === 'light' ? 'bg-white' : 'bg-gray-900'
+      }`}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 ${
-            theme === 'light' 
-              ? 'bg-green-100 text-green-600' 
+          <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 ${theme === 'light'
+              ? 'bg-green-100 text-green-600'
               : 'bg-green-900/30 text-green-400'
-          }`}>
+            }`}>
             My Journey
           </span>
-          <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${
-            theme === 'light' ? 'text-gray-900' : 'text-white'
-          }`}>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${theme === 'light' ? 'text-gray-900' : 'text-white'
+            }`}>
             Work Experience
           </h2>
-          <div className={`w-20 h-1 mx-auto rounded-full ${
-            theme === 'light' ? 'bg-gray-900' : 'bg-white'
-          }`}></div>
+          <div className={`w-20 h-1 mx-auto rounded-full ${theme === 'light' ? 'bg-gray-900' : 'bg-white'
+            }`}></div>
         </div>
 
         {/* Experience Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Line */}
-          <div className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 transform md:-translate-x-1/2 ${
-            theme === 'light' ? 'bg-gray-200' : 'bg-gray-700'
-          }`}></div>
+          <div className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 transform md:-translate-x-1/2 ${theme === 'light' ? 'bg-gray-200' : 'bg-gray-700'
+            }`}></div>
 
           <div className="space-y-6">
             {experiences.map((exp, index) => {
@@ -96,28 +112,25 @@ const Experience: React.FC<ExperienceProps> = ({ theme }) => {
               return (
                 <div
                   key={index}
-                  className={`relative flex items-center ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } animate-fade-in-up`}
+                  className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                    } animate-fade-in-up`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Horizontal connecting line - Left side */}
                   {isEven && (
-                    <div className={`hidden md:block absolute right-1/2 top-1/2 h-0.5 ${
-                      theme === 'light' ? 'bg-gray-200' : 'bg-gray-700'
-                    }`}
+                    <div className={`hidden md:block absolute right-1/2 top-1/2 h-0.5 ${theme === 'light' ? 'bg-gray-200' : 'bg-gray-700'
+                      }`}
                       style={{
                         width: '7rem',
                         marginRight: '3px'
                       }}
                     ></div>
                   )}
-                  
+
                   {/* Horizontal connecting line - Right side */}
                   {!isEven && (
-                    <div className={`hidden md:block absolute left-1/2 top-1/2 h-0.5 ${
-                      theme === 'light' ? 'bg-gray-200' : 'bg-gray-700'
-                    }`}
+                    <div className={`hidden md:block absolute left-1/2 top-1/2 h-0.5 ${theme === 'light' ? 'bg-gray-200' : 'bg-gray-700'
+                      }`}
                       style={{
                         width: '7rem',
                         marginLeft: '3px'
@@ -127,51 +140,43 @@ const Experience: React.FC<ExperienceProps> = ({ theme }) => {
 
                   {/* Timeline Dot */}
                   <div className="absolute left-8 md:left-1/2 w-6 h-6 transform -translate-x-1/2 z-10">
-                    <div className={`w-full h-full rounded-full flex items-center justify-center ${
-                      theme === 'light' ? colors.iconLight : colors.iconDark
-                    }`}>
+                    <div className={`w-full h-full rounded-full flex items-center justify-center ${theme === 'light' ? colors.iconLight : colors.iconDark
+                      }`}>
                       <Briefcase className="w-4 h-4" />
                     </div>
                   </div>
 
                   {/* Content Card */}
-                  <div className={`ml-10 md:ml-0 md:w-5/12 ${
-                    isEven ? 'md:pr-10' : 'md:pl-10'
-                  }`}>
-                    <div className={`p-4 rounded-xl border backdrop-blur-sm transition-all duration-200 hover:scale-[1.02] ${
-                      theme === 'light'
+                  <div className={`ml-10 md:ml-0 md:w-5/12 ${isEven ? 'md:pr-10' : 'md:pl-10'
+                    }`}>
+                    <div className={`p-4 rounded-xl border backdrop-blur-sm transition-all duration-200 hover:scale-[1.02] ${theme === 'light'
                         ? 'bg-white border-gray-200 hover:shadow-md'
                         : 'bg-gray-800/50 border-gray-700 hover:shadow-lg'
-                    }`}>
+                      }`}>
                       {/* Header */}
                       <div className="flex justify-between items-start mb-1">
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded ${
-                          theme === 'light' ? 'bg-gray-100 text-gray-600' : 'bg-gray-700/50 text-gray-300'
-                        }`}>
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded ${theme === 'light' ? 'bg-gray-100 text-gray-600' : 'bg-gray-700/50 text-gray-300'
+                          }`}>
                           {exp.type}
                         </span>
-                        <span className={`text-xs ${
-                          theme === 'light' ? 'text-gray-500' : 'text-gray-400'
-                        }`}>
+                        <span className={`text-xs ${theme === 'light' ? 'text-gray-500' : 'text-gray-400'
+                          }`}>
                           {exp.period}
                         </span>
                       </div>
 
-                      <h3 className={`text-base font-bold mt-1 ${
-                        theme === 'light' ? 'text-gray-900' : 'text-white'
-                      }`}>
+                      <h3 className={`text-base font-bold mt-1 ${theme === 'light' ? 'text-gray-900' : 'text-white'
+                        }`}>
                         {exp.role}
                       </h3>
-                      
-                      <p className={`text-sm font-medium ${
-                        theme === 'light' ? 'text-gray-700' : 'text-gray-300'
-                      }`}>
+
+                      <p className={`text-sm font-medium ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'
+                        }`}>
                         {exp.company}
                       </p>
 
-                      <p className={`text-xs mt-1 ${
-                        theme === 'light' ? 'text-gray-600' : 'text-gray-400'
-                      }`}>
+                      <p className={`text-xs mt-1 ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                        }`}>
                         {exp.location}
                       </p>
 
@@ -180,13 +185,11 @@ const Experience: React.FC<ExperienceProps> = ({ theme }) => {
                         {exp.highlights.map((highlight, idx) => (
                           <li
                             key={idx}
-                            className={`text-xs flex items-start gap-1.5 ${
-                              theme === 'light' ? 'text-gray-600' : 'text-gray-400'
-                            }`}
+                            className={`text-xs flex items-start gap-1.5 ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                              }`}
                           >
-                            <span className={`w-1 h-1 rounded-full mt-1.5 flex-shrink-0 ${
-                              theme === 'light' ? colors.accentLight : colors.accentDark
-                            }`}></span>
+                            <span className={`w-1 h-1 rounded-full mt-1.5 flex-shrink-0 ${theme === 'light' ? colors.accentLight : colors.accentDark
+                              }`}></span>
                             <span>{highlight}</span>
                           </li>
                         ))}
@@ -200,19 +203,16 @@ const Experience: React.FC<ExperienceProps> = ({ theme }) => {
         </div>
 
         {/* Call to Action */}
-        <div className={`mt-12 p-6 rounded-2xl border text-center transition-all duration-300 hover:scale-[1.01] ${
-          theme === 'light'
+        <div className={`mt-12 p-6 rounded-2xl border text-center transition-all duration-300 hover:scale-[1.01] ${theme === 'light'
             ? 'bg-gradient-to-r from-green-50 to-blue-50 border-green-200'
             : 'bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-800/50'
-        }`}>
-          <p className={`text-lg font-semibold ${
-            theme === 'light' ? 'text-gray-900' : 'text-white'
           }`}>
+          <p className={`text-lg font-semibold ${theme === 'light' ? 'text-gray-900' : 'text-white'
+            }`}>
             🚀 Open to new opportunities and collaborations!
           </p>
-          <p className={`text-sm mt-2 ${
-            theme === 'light' ? 'text-gray-700' : 'text-gray-300'
-          }`}>
+          <p className={`text-sm mt-2 ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'
+            }`}>
             Let's create something amazing together
           </p>
         </div>
