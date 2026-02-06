@@ -9,7 +9,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/portfolio-site/Nirjal Byanjankar.pdf';
+    const resumeUrl = '/Nirjal Byanjankar.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
     link.download = 'Nirjal_Byanjankar_Resume.pdf';
@@ -20,29 +20,27 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center animate-slideDown">
-      <div className={`rounded-full px-4 py-2 shadow-2xl backdrop-blur-sm hover:shadow-3xl transition-all duration-300 hover:scale-105 ${
-        theme === 'light' 
-          ? 'bg-white/90 border border-gray-300/90' 
+      <div className={`rounded-full px-4 py-2 shadow-2xl backdrop-blur-sm hover:shadow-3xl transition-all duration-300 hover:scale-105 ${theme === 'light'
+          ? 'bg-white/90 border border-gray-300/90'
           : 'bg-black/30 border border-gray-500/60'
-      }`}>
+        }`}>
         <div className="flex items-center gap-4">
           {/* Left side - Profile Image */}
-          <button 
+          <button
             onClick={() => {
               const heroSection = document.getElementById('home');
               if (heroSection) {
                 heroSection.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className={`w-10 h-10 rounded-full overflow-hidden border-2 transition-all duration-300 flex-shrink-0 bg-gray-700 p-0 hover:scale-110 hover:rotate-12 active:scale-95 ${
-              theme === 'light' ? 'border-gray-800 hover:border-gray-600' : 'border-white hover:border-gray-300'
-            }`}
+            className={`w-10 h-10 rounded-full overflow-hidden border-2 transition-all duration-300 flex-shrink-0 bg-gray-700 p-0 hover:scale-110 hover:rotate-12 active:scale-95 ${theme === 'light' ? 'border-gray-800 hover:border-gray-600' : 'border-white hover:border-gray-300'
+              }`}
             aria-label="Home"
             style={{ minWidth: '40px', minHeight: '40px' }}
           >
-            <img 
-              src="/portfolio-site/assets/images/profile.jpg"
-              alt="Profile" 
+            <img
+              src="/assets/images/profile.jpg"
+              alt="Profile"
               className="w-full h-full object-cover block transition-transform duration-300 hover:scale-110"
               style={{ width: '40px', height: '40px' }}
               onError={(e) => {
@@ -51,12 +49,12 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               }}
             />
           </button>
-          
+
           {/* Middle - Navigation Links */}
           <div className="hidden md:flex items-center gap-6">
             {['About', 'Education', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
-              <a 
-                key={item} 
+              <a
+                key={item}
                 onClick={(e) => {
                   e.preventDefault();
                   const sectionId = item.toLowerCase();
@@ -66,9 +64,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                   }
                 }}
                 href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium transition-all duration-300 whitespace-nowrap relative group ${
-                  theme === 'light' ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'
-                }`}
+                className={`text-sm font-medium transition-all duration-300 whitespace-nowrap relative group ${theme === 'light' ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'
+                  }`}
                 onMouseEnter={() => setHoveredItem(item)}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{
@@ -77,23 +74,21 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                 }}
               >
                 {item}
-                <span 
-                  className={`absolute -bottom-1 left-0 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${
-                    theme === 'light' ? 'bg-gray-900' : 'bg-white'
-                  }`}
+                <span
+                  className={`absolute -bottom-1 left-0 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-full ${theme === 'light' ? 'bg-gray-900' : 'bg-white'
+                    }`}
                 />
               </a>
             ))}
           </div>
-          
+
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 border ${
-              theme === 'light' 
-                ? 'border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400' 
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 border ${theme === 'light'
+                ? 'border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400'
                 : 'border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500'
-            }`}
+              }`}
             aria-label="Toggle theme"
           >
             {theme === 'light' ? (
@@ -108,20 +103,19 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               </svg>
             )}
           </button>
-          
+
           {/* Right side - Download Resume Button */}
-          <button 
+          <button
             onClick={handleDownloadResume}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 flex-shrink-0 hover:scale-110 hover:shadow-lg active:scale-95 border ${
-              theme === 'light' 
-                ? 'border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400' 
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 flex-shrink-0 hover:scale-110 hover:shadow-lg active:scale-95 border ${theme === 'light'
+                ? 'border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400'
                 : 'border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500'
-            }`}
+              }`}
           >
-            <svg 
-              className="w-4 h-4 transition-transform duration-300" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-4 h-4 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -130,9 +124,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           </button>
 
           {/* Mobile Menu Button */}
-          <button className={`md:hidden flex-shrink-0 hover:scale-110 active:scale-95 transition-transform duration-300 ${
-            theme === 'light' ? 'text-gray-900' : 'text-white'
-          }`}>
+          <button className={`md:hidden flex-shrink-0 hover:scale-110 active:scale-95 transition-transform duration-300 ${theme === 'light' ? 'text-gray-900' : 'text-white'
+            }`}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

@@ -87,8 +87,8 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               <button
                 onClick={() => scrollToSection('projects')}
                 className={`group relative px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden ${theme === 'light'
-                    ? 'bg-gray-900 text-white hover:bg-gray-800'
-                    : 'bg-white text-gray-900 hover:bg-gray-100'
+                  ? 'bg-gray-900 text-white hover:bg-gray-800'
+                  : 'bg-white text-gray-900 hover:bg-gray-100'
                   }`}
                 aria-label="View my work"
               >
@@ -99,16 +99,16 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                   </svg>
                 </span>
                 <div className={`absolute inset-0 -z-10 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity ${theme === 'light'
-                    ? 'from-blue-600 to-purple-600'
-                    : 'from-blue-400 to-purple-400'
+                  ? 'from-blue-600 to-purple-600'
+                  : 'from-blue-400 to-purple-400'
                   }`}></div>
               </button>
 
               <button
                 onClick={() => scrollToSection('contact')}
                 className={`px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95 border backdrop-blur-sm ${theme === 'light'
-                    ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
-                    : 'border-gray-600 text-white hover:bg-gray-800'
+                  ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
+                  : 'border-gray-600 text-white hover:bg-gray-800'
                   }`}
                 aria-label="Get in touch"
               >
@@ -126,8 +126,8 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${theme === 'light'
-                    ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
-                    : 'border-gray-700 text-gray-300 hover:bg-gray-800'
+                  ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                  : 'border-gray-700 text-gray-300 hover:bg-gray-800'
                   }`}
               >
                 <Github className="w-5 h-5" />
@@ -137,8 +137,8 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${theme === 'light'
-                    ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
-                    : 'border-gray-700 text-gray-300 hover:bg-gray-800'
+                  ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                  : 'border-gray-700 text-gray-300 hover:bg-gray-800'
                   }`}
               >
                 <Linkedin className="w-5 h-5" />
@@ -148,8 +148,8 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border ${theme === 'light'
-                    ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
-                    : 'border-gray-700 text-gray-300 hover:bg-gray-800'
+                  ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                  : 'border-gray-700 text-gray-300 hover:bg-gray-800'
                   }`}
               >
                 <Instagram className="w-5 h-5" />
@@ -167,7 +167,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               {/* Image Container */}
               <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-900">
                 <img
-                  src="/portfolio-site/assets/images/profile.jpg"
+                  src="/assets/images/profile.jpg"
                   alt="Nirjal"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
