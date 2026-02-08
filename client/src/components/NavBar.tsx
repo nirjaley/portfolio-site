@@ -7,6 +7,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleDownloadResume = () => {
     const resumeUrl = '/Nirjal Byanjankar.pdf';
@@ -16,6 +17,14 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
   };
 
   return (
@@ -124,14 +133,59 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           </button>
 
           {/* Mobile Menu Button */}
-          <button className={`md:hidden flex-shrink-0 hover:scale-110 active:scale-95 transition-transform duration-300 ${theme === 'light' ? 'text-gray-900' : 'text-white'
-            }`}>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`md:hidden flex-shrink-0 hover:scale-110 active:scale-95 transition-all duration-300 ${theme === 'light' ? 'text-gray-900' : 'text-white'
+            }`}
+            aria-label="Toggle menu"
+            style={{
+              animation: mobileMenuOpen ? 'menuTilt 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'none'
+            }}
+          >
+            <div className="relative w-6 h-6">
+              <svg 
+                className={`w-6 h-6 absolute transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg 
+                className={`w-6 h-6 absolute transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className={`absolute top-full left-1/2 -translate-x-1/2 w-11/12 mt-2 rounded-2xl shadow-2xl backdrop-blur-sm z-40 ${theme === 'light'
+          ? 'bg-white/95 border border-gray-300/90'
+          : 'bg-black/50 border border-gray-500/60'
+        }`}>
+          <div className="px-6 py-4 flex flex-col gap-3">
+            {['About', 'Education', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className={`text-sm font-medium transition-all duration-300 text-left py-2 px-3 rounded-lg ${theme === 'light' 
+                  ? 'text-gray-900 hover:bg-gray-100' 
+                  : 'text-white hover:bg-gray-800'
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       <style>{`
         @keyframes slideDown {
@@ -142,6 +196,21 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        @keyframes menuTilt {
+          0% {
+            transform: rotateZ(0deg);
+          }
+          25% {
+            transform: rotateZ(-8deg);
+          }
+          75% {
+            transform: rotateZ(8deg);
+          }
+          100% {
+            transform: rotateZ(0deg);
           }
         }
         

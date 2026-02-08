@@ -55,13 +55,13 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full max-w-6xl px-4 -mt-16">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+      <div className="relative z-10 w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-16">
           {/* Left Side - Text Content */}
           <div className="flex-1 text-center lg:text-left">
 
             {/* Main Heading with Typing Effect */}
-            <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight ${theme === 'light' ? 'text-gray-900' : 'text-white'
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight ${theme === 'light' ? 'text-gray-900' : 'text-white'
               }`}>
               Hi, I'm{' '}
               <span className="relative inline-block">
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
             </h1>
 
             {/* Subtitle with typing effect style */}
-            <p className={`text-lg md:text-xl mb-8 animate-fade-in-delay max-w-2xl ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+            <p className={`text-base sm:text-lg md:text-xl mb-6 sm:mb-8 animate-fade-in-delay max-w-2xl ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'
               } lg:mx-0 mx-auto`}>
               Crafting beautiful digital experiences as a{' '}
               <span className={`font-semibold ${theme === 'light' ? 'text-gray-900' : 'text-white'
@@ -159,13 +159,13 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
           </div>
 
           {/* Right Side - Profile Image */}
-          <div className="flex-shrink-0 animate-fade-in-right">
+          <div className="flex-shrink-0 animate-fade-in-right w-full sm:w-auto flex justify-center">
             <div className="relative group">
               {/* Gradient Border Effect */}
               <div className={`absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-75 group-hover:opacity-100 blur-lg transition-all duration-300 animate-pulse-slow`}></div>
 
               {/* Image Container */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-900">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-900">
                 <img
                   src="/assets/images/profile.jpg"
                   alt="Nirjal"
@@ -179,13 +179,13 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
               </div>
 
               {/* Floating Elements */}
-              <div className={`absolute -top-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm border animate-float ${theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-800/80 border-gray-700'
+              <div className={`absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center backdrop-blur-sm border animate-float ${theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-800/80 border-gray-700'
                 }`}>
-                <span className="text-3xl">🎵</span>
+                <span className="text-2xl sm:text-3xl">🎵</span>
               </div>
-              <div className={`absolute -bottom-4 -left-4 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm border animate-float-delay ${theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-800/80 border-gray-700'
+              <div className={`absolute -bottom-4 -left-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center backdrop-blur-sm border animate-float-delay ${theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-800/80 border-gray-700'
                 }`}>
-                <span className="text-3xl">🚀</span>
+                <span className="text-2xl sm:text-3xl">🚀</span>
               </div>
             </div>
           </div>
