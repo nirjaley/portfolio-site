@@ -167,8 +167,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className={`absolute top-full left-1/2 -translate-x-1/2 w-11/12 mt-2 rounded-2xl shadow-2xl backdrop-blur-sm z-40 ${theme === 'light'
-          ? 'bg-white/95 border border-gray-300/90'
-          : 'bg-black/50 border border-gray-500/60'
+          ? 'bg-white border border-gray-300'
+          : 'bg-gray-900 border border-gray-700'
         }`}>
           <div className="px-6 py-4 flex flex-col gap-3">
             {['About', 'Education', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
