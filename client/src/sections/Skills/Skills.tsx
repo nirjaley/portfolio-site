@@ -11,7 +11,7 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
       title: "Programming Languages",
       icon: Code2,
       color: "blue",
-      skills: ["JavaScript", "Java", "Python", "C#"]
+      skills: ["TypeScript", "JavaScript", "Java", "Python", "C#"]
     },
     {
       title: "Web Technologies",
@@ -29,7 +29,7 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
       title: "Frameworks & Tools",
       icon: Wrench,
       color: "orange",
-      skills: ["Git", "GitHub", "Figma", "VS Code", "Canva"]
+      skills: ["Git", "GitHub", "Figma", "VS Code", "Canva", "Framer Motion"]
     }
   ];
 
@@ -144,7 +144,7 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
             Always learning and staying curious about emerging technologies
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["LLM (Large Language Models)"].map((tech, idx) => (
+            {["Full Stack Dvvelopment"].map((tech, idx) => (
               <span
                 key={idx}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-all duration-300 hover:scale-110 ${theme === 'light'
